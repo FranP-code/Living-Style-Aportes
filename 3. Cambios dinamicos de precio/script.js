@@ -1,5 +1,5 @@
 function getPricesElements() {
-    const elements = document.querySelectorAll(".product-info .price span")
+    const elements = document.querySelectorAll(".product-info .price")
     return elements
 }
 
