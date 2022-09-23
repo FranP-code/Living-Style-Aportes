@@ -74,14 +74,13 @@ function main() {
             let str = option.substring(
                 option.indexOf("(+$") + 3,
                 option.indexOf(")")
-            ).replace(".","")
-
+            ).replace(".","").replace(",",".")
             priceIncrease = parseInt(str)
         }
         
         //Replace the original price text with the actualizated price
         priceElements.forEach((element, index) => {
-            element.innerText = `$${(priceElementsPrices[index] + priceIncrease).toLocaleString()}`
+            element.innerText = `$${(priceElementsPrices[index] + priceIncrease).toLocaleString(false, {minimumFractionDigits: 2})}`
         })
 
         //Set the shares of the product
